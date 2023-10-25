@@ -176,7 +176,20 @@ local function ApplySettings(Object)
             if Object:FindFirstChild("RushNew") then
                 if not Object.RushNew:WaitForChild("PlaySound").Playing then return end
             end
-            local Color = ESP_Items[Object.Name] and Color3.new(1,1) or ESP_Entities[Object.Name] and Color3.new(1) or Color3.new(0,1,1)
+            local Color = ESP_Items[Object.Name] and 
+            Color3.new(148,0,211)
+            wait(1)
+		    Color3.new(75, 0, 130)
+		    wait(2)
+		    Color3.new(0, 0, 255)
+		    wait(1)
+		    Color3.new(0, 255, 0)
+		    wait(2)
+		    Color3.new(255, 255, 0)
+		    wait(1)
+		    Color3.new(255, 127, 0)
+		    wait(2)
+		    Color3.new(255, 0 , 0) or ESP_Entities[Object.Name] and Color3.new(1) or Color3.new(0,1,1)
             if Object.Name == "RushMoving" or Object.Name == "AmbushMoving" or Object.Name == "Eyes" or Object.Name == "A60" or Object.Name == "A120" then
                 for i = 1, 100 do
                     if Object:FindFirstChildOfClass("Part") then
