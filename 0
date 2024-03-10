@@ -4,71 +4,12 @@ local Flux = loadstring(game:HttpGet("https://raw.githubusercontent.com/drillygz
 local Window = Flux:Window("awesome script  ", "Doors", Color3.new(1,5.8), Enum.KeyCode.RightControl)
 local Tab = Window:Tab("Main", "rbxassetid://6026568198")
 local Tab2 = Window:Tab("Visual", "rbxassetid://6031763426")
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local Players = game:GetService("Players")
-local RunService = game:GetService("RunService")
-local TextChatService = game:GetService("TextChatService")
-local Lighting = game:GetService("Lighting")
-local LocalPlayer = Players.LocalPlayer
-local Character = LocalPlayer.Character
-local Backpack = LocalPlayer.Backpack
-local Humanoid = Character:WaitForChild("Humanoid")
-local AvatarIcon = Players:GetUserThumbnailAsync(LocalPlayer.UserId,Enum.ThumbnailType.HeadShot,Enum.ThumbnailSize.Size420x420)
-local MainUI = LocalPlayer.PlayerGui.MainUI
-local Main_Game = MainUI.Initiator.Main_Game
-local Modules = Main_Game.RemoteListener.Modules
-local SpeedBoost = 0
-local ScreechSafeRooms = {}
-local PrimaryPart = Character.PrimaryPart
-local CurrentRooms = workspace.CurrentRooms
-local EntityInfo = ReplicatedStorage.EntityInfo
-local ClientModules = ReplicatedStorage.ClientModules
-local DeathHint = EntityInfo.DeathHint
-local CamLock = EntityInfo.CamLock
-local MotorReplication = EntityInfo.MotorReplication
-local EntityModules = ClientModules.EntityModules
 local ItemESP = false
 local EntityESP = false
 local OtherESP = false
 local ESP_Items = {KeyObtain={"Key",1.5},LiveHintBook={"Book",1.5},Lighter={"Lighter",1.5},Lockpick={"Lockpicks",1.5},Vitamins={"Vitamins",1.5},Crucifix={"Crucifix",1.5},CrucifixWall={"Crucifix",1.5},SkeletonKey={"Skeleton Key",1.5},Flashlight={"Flashlight",1.5},Candle={"Candle",1.5},LiveBreakerPolePickup={"Fuse",1.5},Shears={"Shears",1.5},Battery={"Battery",1.5},PickupItem={"Paper",1.5},ElectricalKeyObtain={"Electrical Key",1.5},Shakelight={"Shakelight",1.5},Scanner={"iPad",1.5}}
 local ESP_Entities = {RushMoving={"Rush",5},AmbushMoving={"Ambush",5},FigureRagdoll={"Figure",7},FigureLibrary={"Figure",7},SeekMoving={"Seek",5.5},Screech={"Screech",2},Eyes={"Eyes",4},Snare={"Snare",2},A60={"A-60",10},A120={"A-120",10}}
 local ESP_Other = {Door={"Door",5},LeverForGate={"Lever",3},GoldPile={"Gold",0.5},Bandage={"Bandage",0.5}}
-local MainFrame = MainUI.MainFrame
-local GameData = ReplicatedStorage.GameData
-local LatestRoom = GameData.LatestRoom
-local Floor = GameData.Floor
-local OldEnabled = {}
-local Module_Events = require(ClientModules.Module_Events)
-local ShatterFunction = Module_Events.shatter
-local HideTick = tick()
-local GlitchModule = EntityModules.Glitch
-local CustomGlitchModule = GlitchModule:Clone()
-local Ranks = {
-    Creator = {
-        Title = "awesome script creator",
-        Color = Color3.new(0,0.8,0)
-    },
-    MrHong = {
-        Title = "Mr. Hong",
-        Color = Color3.new(0.9,0,0)
-    },
-    Cool = {
-        Title = "Cool",
-        Color = Color3.new(0,0.7,1)
-    },
-    Greg = {
-        Title = "official greg heffley",
-        Color = Color3.new(0.3,0.3,0.3)
-    }
-}
-local PlayerRanks = {
-    ["2615068449"] = "Creator",
-    ["2300945089"] = "MrHong",
-    ["152169512"] = "Cool",
-    ["1160958289"] = "Cool",
-    ["211059753"] = "Greg",
-    ["47466584"] = "Cool"
-}
 for _,Player in pairs(Players:GetPlayers()) do
     if Player ~= LocalPlayer then
         ESP_Other[Player.Name] = {Player.DisplayName,4}
