@@ -1,6 +1,6 @@
 if game.CoreGui:FindFirstChild("FluxLib") or game.CoreGui:FindFirstChild("Message") then return end
 
-local Flux = loadstring(game:HttpGet("https://lolcat.boo/assets/flux-fixed"))()
+local Flux = loadstring(game:HttpGet("https://raw.githubusercontent.com/drillygzzly/Roblox-UI-Libs/main/Flux Lib/Flux Lib Source.lua"))()
 local Window = Flux:Window("awesome script  ", "Doors", Color3.new(1,5.8), Enum.KeyCode.RightControl)
 local Tab = Window:Tab("Main", "rbxassetid://6026568198")
 local Tab2 = Window:Tab("Visual", "rbxassetid://6031763426")
